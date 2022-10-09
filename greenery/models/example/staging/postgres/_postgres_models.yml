@@ -1,0 +1,19 @@
+version: 2
+
+models:
+
+  - name: addresses
+    description: All greenery addresses for orders and users
+  - name: events
+    description: Greenery site event detail.
+  - name: products
+    description: Product detail and inventory levels. 
+  - name: promos
+    description: Promo detail and status.
+  - name: order_items
+    description: Detail for orders, including products and quantity per product.
+  - name: orders
+    description: High-level information. for orders, including cost, promos, and shipping information.
+  - name: users
+    description: Greenery user information.
+  
