@@ -1,0 +1,10 @@
+version: 2
+
+models:
+
+  - name: dim_products
+  - name: dim_users
+  - name: dim_orders
+  - name: dim_addresses
+  - name: dim_promos
+  - name: fact_orders
