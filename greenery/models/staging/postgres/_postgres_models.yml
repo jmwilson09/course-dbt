@@ -2,18 +2,18 @@ version: 2
 
 models:
 
-  - name: addresses
+  - name: stg_addresses
     description: All greenery addresses for orders and users
-  - name: events
+  - name: stg_events
     description: Greenery site event detail.
-  - name: products
+  - name: stg_products
     description: Product detail and inventory levels. 
-  - name: promos
+  - name: stg_promos
     description: Promo detail and status.
-  - name: order_items
+  - name: stg_order_items
     description: Detail for orders, including products and quantity per product.
-  - name: orders
+  - name: stg_orders
     description: High-level information. for orders, including cost, promos, and shipping information.
-  - name: users
+  - name: stg_users
     description: Greenery user information.
   
