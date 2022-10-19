@@ -5,6 +5,7 @@ with dim_users as (
 
 select 
   row_number() over(order by user_id) as user_key,
+  user_id,
   first_name,
   last_name,
   concat(first_name, ' ', last_name) as full_name,

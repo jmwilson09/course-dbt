@@ -3,8 +3,102 @@ version: 2
 models:
 
   - name: dim_products
+    description: product attributes and inventory level.
+    columns:
+      - name: product_key
+        description: surrogate key for product dimension.
+        tags:
+          - primary-key
+        tests:
+          - unique
+          - not_null
   - name: dim_users
+    description: user attributes and contact info.
+    columns:
+      - name: user_key
+        description: surrogate key for user dimension.
+        tags:
+          - primary-key
+        tests:
+          - unique
+          - not_null
   - name: dim_orders
+    description: order attributes and key dates.
+    columns:
+      - name: order_key
+        description: surrogate key for order dimension.
+        tags:
+          - primary-key
+        tests:
+          - unique
+          - not_null
   - name: dim_addresses
+    description: addresses for users or shipments.
+    columns:
+      - name: address_key
+        description: surrogate key for address dimension.
+        tags:
+          - primary-key
+        tests:
+          - unique
+          - not_null
   - name: dim_promos
+    description: promo attributes.
+    columns:
+      - name: promo_key
+        description: surrogate key for promos dimension.
+        tags:
+          - primary-key
+        tests:
+          - unique
+          - not_null
+
+  - name: int_order_aggregates
+    description: intermediate table to calculate metrics at the order level.
+    columns:
+      - name: order_id
+        description: system ID for order.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
+  - name: int_user_order_aggregates
+    description: intermediate table to calculate metrics at the user-order level.
+    columns:
+      - name: user_id
+        description: system ID for user.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
+  - name: int_product_aggregates
+    description: intermediate table to calculate metrics at the product level.
+    columns:
+      - name: product_id
+        description: system ID for product.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
+
   - name: fact_orders
+    description: fact table for order-level measures.
+    columns:
+      - name: order_key
+        description: surrogate key for orders.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
+      - name: address_key
+        description: surrogate key to link to dim_addresses
+      - name: promo_key
+        description: surrogate key to link to dim_promos
+      - name: user_key
+        description: surrogate key to link to dim_users
+        tests: 
+          - not_null

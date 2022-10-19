@@ -2,4 +2,13 @@ version: 2
 
 models:
 
-  - name: fact_user_orders
+  - name: fact_users
+    description: fact table for user-level measures.
+    columns:
+      - name: user_key
+        description: surrogate key for orders.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null

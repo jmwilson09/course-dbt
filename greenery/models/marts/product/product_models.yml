@@ -3,4 +3,22 @@ version: 2
 models:
 
   - name: fact_products
+    description: fact table for product-level measures.
+    columns:
+      - name: product_key
+        description: surrogate key for products.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
   - name: fact_page_views
+    description: fact table for user-level measures.
+    columns:
+      - name: product_key
+        description: surrogate key for products.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
