@@ -52,6 +52,16 @@ models:
         tests:
           - unique
           - not_null
+  - name: dim_sessions
+    description: session attributes.
+    columns:
+      - name: session_key
+        description: surrogate key for sessions dimension.
+        tags:
+          - primary-key
+        tests:
+          - unique
+          - not_null
 
   - name: int_order_aggregates
     description: intermediate table to calculate metrics at the order level.
@@ -78,6 +88,30 @@ models:
     columns:
       - name: product_id
         description: system ID for product.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
+  - name: int_session_aggregates
+    description: intermediate table to calculate metrics at the session level.
+    columns:
+      - name: session_id
+        description: system ID for session.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
+  - name: int_session_product_aggregates
+    description: intermediate table to calculate metrics at the session-product level.
+    columns:
+      - name: session_id
+        description: system ID for session.
+        tags: 
+          - primary-key
+      - name: product_id
+        description: system ID for session.
         tags: 
           - primary-key
         tests:

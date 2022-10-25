@@ -4,7 +4,7 @@ with dim_addresses as (
 )
 
 select 
-  row_number() over( order by address_id) as address_key,
+  {{ dbt_utils.surrogate_key(["address_id"]) }} as address_key,
   address_id,
   address,
   zipcode,

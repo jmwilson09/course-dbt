@@ -12,3 +12,13 @@ models:
         tests:
           - unique
           - not_null
+  - name: fact_sessions
+    description: fact table for session-level measures.
+    columns:
+      - name: session_key
+        description: surrogate key for sessions.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null

@@ -4,7 +4,7 @@ with dim_orders as (
 )
 
 select 
-  row_number() over ( order by order_id) as order_key,
+  {{ dbt_utils.surrogate_key(["order_id"]) }} as order_key,
   order_id,
   shipping_service,
   tracking_id,

@@ -4,7 +4,7 @@ with dim_products as (
 )
 
 select 
-  row_number() over( order by product_id) as product_key,
+  {{ dbt_utils.surrogate_key(["product_id"]) }} as  product_key,
   product_id,
   name,
   price,

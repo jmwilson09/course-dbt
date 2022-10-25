@@ -4,7 +4,7 @@ with dim_promos as (
 )
 
 select 
-  row_number() over ( order by promo_id) as promo_key,
+  {{ dbt_utils.surrogate_key(["promo_id"]) }} as  promo_key,
   promo_id,
   discount,
   status
