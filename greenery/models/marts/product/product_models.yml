@@ -12,6 +12,7 @@ models:
         tests:
           - unique
           - not_null
+          
   - name: fact_page_views
     description: fact table for user-level measures.
     columns:
