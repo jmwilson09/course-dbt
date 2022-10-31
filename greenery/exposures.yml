@@ -1,0 +1,12 @@
+version: 2
+
+exposures:  
+  - name: Product Funnel Dashboard
+    description: product funnel dashboard dependencies.
+    type: dashboard
+    maturity: low
+    owner:
+      name: Jayne Wilson
+      email: jayne@greenery.com
+    depends_on:
+      - ref('fact_product_funnel')

@@ -23,3 +23,14 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: fact_product_funnel
+    description: fact table for product funnel measures.
+    columns:
+      - name: product_key
+        description: surrogate key for products.
+        tags: 
+          - primary-key
+        tests:
+          - unique
+          - not_null
